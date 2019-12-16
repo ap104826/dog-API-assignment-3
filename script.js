@@ -11,8 +11,8 @@ function getDogImage(breed) {
 function displayResults(responseJson) {
   console.log(responseJson);
 
-  if (responseJson.message == "Breed not found") {
-    alert('That breed wasn\'t found, please try another.');
+  if (responseJson.code == 404) {
+    alert(responseJson.message);
   } else {
     //replace the existing image with the new one
     $('.results').html(`<h2>Look at this dog!</h2>`);
